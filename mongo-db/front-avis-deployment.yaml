@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: front-avis
-        image: chanou41/tp-mern:front1
+        image: chanou41/tp-mern:front
         resources:
           limits:
             memory: "128Mi"
