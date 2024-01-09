@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-avis
+spec:
+  selector:
+    matchLabels:
+      app: front-avis
+  template:
+    metadata:
+      labels:
+        app: front-avis
+    spec:
+      containers:
+      - name: front-avis
+        image: chanou41/tp-mern:front1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-avis
+spec:
+  selector:
+    matchLabels:
+      app: ms-avis
+  template:
+    metadata:
+      labels:
+        app: ms-avis
+    spec:
+      containers:
+      - name: ms-avis
+        image: chanou41/tp-mern:back
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8000
