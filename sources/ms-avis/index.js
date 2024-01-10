@@ -4,7 +4,19 @@ const mongoose = require('mongoose');
 const app =  express();
 app.use(express.urlencoded());
 app.use(express.json());
-mongoose.connect("mongodb://mongodb-service:27017/avis");
+
+const mongodbusername = process.env.MONGO_USERNAME;
+const mongodbpassword = process.env.MONGO_PASSWORD;
+const mongodbhost = process.env.MONGODB_HOST;
+const mongodbport = process.env.MONGODB_PORT;
+
+
+
+console.log("mongodbhost=")
+const mongodburl = `mongodb://${mongodbusername}:${mongodbpassword}@${mongodbhost}:${mongodbport}/avis?authSource=admin`
+console.log(mongodburl)
+mongoose.connect(mongodburl,{useNewUrlParser: true,useUnifiedTopology: true});
+
 
 const schema = new mongoose.Schema({
   texte: String,
