@@ -14,6 +14,11 @@ spec:
       containers:
       - name: mongodb
         image: mongo:4-focal
+        env:
+          - name: MONGO_INITDB_ROOT_USERNAME
+            value: root
+          - name: MONGO_INITDB_ROOT_PASSWORD
+            value: root
         resources:
           limits:
             memory: "128Mi"

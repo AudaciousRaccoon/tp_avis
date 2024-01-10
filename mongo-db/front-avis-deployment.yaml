@@ -13,7 +13,12 @@ spec:
     spec:
       containers:
       - name: front-avis
-        image: chanou41/tp-mern:1.0.4
+        image: chanou41/tp-mern:front10
+        env:
+        - name: NODE_PORT
+          value: "8000"
+        - name: NODE_SERVICE
+          value: back-service
         resources:
           limits:
             memory: "128Mi"

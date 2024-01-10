@@ -13,7 +13,16 @@ spec:
     spec:
       containers:
       - name: ms-avis
-        image: chanou41/tp-mern:back
+        image: chanou41/tp-mern:back20
+        env:
+          - name: MONGO_USERNAME
+            value: root
+          - name: MONGO_PASSWORD
+            value: root
+          - name: MONGODB_HOST
+            value: mongodb-service
+          - name: MONGODB_PORT
+            value: "27017"
         resources:
           limits:
             memory: "128Mi"

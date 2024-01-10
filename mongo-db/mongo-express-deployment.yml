@@ -15,8 +15,12 @@ spec:
       - name: mongo-express
         image: mongo-express:1-18-alpine3.18
         env:
-        - name: ME_CONFIG_MONGODB_SERVER
-          value: mongodb-service
+          - name: ME_CONFIG_MONGODB_ADMINUSERNAME
+            value: root
+          - name: ME_CONFIG_MONGODB_ADMINPASSWORD
+            value: root
+          - name: ME_CONFIG_MONGODB_SERVER
+            value: mongodb-service
         resources:
           limits:
             memory: "128Mi"
